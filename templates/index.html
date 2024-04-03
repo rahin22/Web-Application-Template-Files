@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='topnav.css') }}">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <title>Flask Template</title>
+</head>
+
+
+<body>
+    <div id="scrollTop" onclick='scrollToTop()'>
+        <i class="ri-arrow-up-line"></i>
+    </div>
+
+    <div class="navcontainer">
+        <nav>
+            <div class="nav-logo" onclick="homeRedir()">
+                <i class="ri-apps-2-line"></i>
+                <h2 id="logo">Logo</h2>
+            </div>
+
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Leagues</a>
+                    </li>
+                    <li>
+                        <a href="#">Teams</a>
+                    </li>
+                    <li>
+                        <a href="#">Match DB(A-Z)</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="home"> </div>
+
+    
+    <script type="text/javascript" src="{{ url_for('static', filename='topnav.js') }}"></script>
+</body>
+
+</html>

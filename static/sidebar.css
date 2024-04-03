@@ -1,0 +1,279 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    /* Font Sizes */
+    --largest-font: 112px;
+    --larger-font: 70px;
+    --large-font: 34px;
+    --text-large-font: 20px;
+    --text-font: 16px;
+
+    /* Font Colours */
+    --text-color: #000;
+    --hover-color: #fff;
+    --dark-color: #000;
+    --bg-color: #ffff;
+    --nav-hover-color: #0065b9;
+    --secondary-color: #0065b9;
+    --search-bar-color: #ffff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+}
+
+
+/* Scroll Top Button*/
+
+#scrollTop {
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    transform: translate(90vw, 90vh);
+    cursor: pointer;
+    z-index: 1;
+    transition: all 0.5s;
+    border-radius: 50%;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#scrollTop i {
+    background: var(--secondary-color);
+    font-size: 1.5em;
+    padding: 8px;
+    border-radius: 50%;
+    color: var(--bg-color);
+    transition: all 0.5s;
+}
+
+#scrollTop i:hover {
+    background-color: var(--hover-color);
+    color: var(--secondary-color);
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+/* Scroll Top Button*/
+
+
+/* Navbar Section */
+
+.navcontainer {
+    width: 100%;
+    min-height: 10vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.navcontainer nav {
+    justify-content: center;
+    padding-right: 0;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 80px;
+    transition: all 0.5s;
+}
+
+.nav-logo {
+    position: absolute;
+    left: 0px;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-logo i {
+    font-size: 1.5em;
+    margin: 1em;
+    color: var(--dark-color);
+}
+
+.nav-logo h2 {
+    font-family: "Poppins";
+    font-size: 20px;
+    padding: 0px;
+    margin: 20px;
+    top: 0;
+    cursor: pointer;
+    left: 40px;
+    color: var(--dark-color);
+    position: absolute;
+
+}
+
+.nav-menu {
+    width: 260px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 16px;
+    background: var(--bg-color);
+    z-index: 1000;
+    position: fixed;
+    right: -260px;
+    transition: right 0.5s ease;
+}
+
+.bottomitems {
+    margin-top: 13rem;
+}
+
+.nav-menu.open {
+    right: 0;
+}
+
+.nav-menu ul {
+    margin-top: 30px;
+}
+
+.nav-menu ul li {
+    list-style: none;
+    padding: 10px 20px;
+}
+
+.nav-menu ul li:nth-child(1) {
+    padding-top: 40px;
+}
+
+.nav-link {
+    align-items: center;
+    text-decoration: none;
+    color: var(--dark-color);
+    font-family: "Poppins";
+    font-size: var(--text-large-font);
+    font-weight: 400;
+    margin: 8px 0;
+    padding: 14px 12px;
+    border-radius: 8px;
+}
+
+.nav-menu ul li a:hover {
+    color: var(--secondary-color);
+}
+
+
+.nav-close {
+    display: block;
+    visibility: visible;
+    position: absolute;
+    font-size: 1.5em;
+    top: 18px;
+    right: 32px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.nav-toggle {
+    display: inline-flex;
+    visibility: visible;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    margin: 1em;
+    font-size: 1.5em;
+    font-weight: 600;
+    transition: all 0.5s;
+}
+
+.nav-toggle:hover{
+    color: var(--nav-hover-color);
+}
+
+.nav-close:hover{
+    color: var(--secondary-color);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 1000vh;
+    width: 200%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.change-header {
+    background: var(--secondary-color);
+}
+
+
+
+/* Navbar Section */
+
+
+/* Home Section */
+
+.home {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Home Section */
+
+
+
+/* Animation Section */
+
+[data-inViewport='slideTop'] {
+    transition: 1.5s cubic-bezier(0.4, 1, 0.22, 1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4em);
+    transition-delay: 0.2s;
+}
+
+[data-inViewport='slideTop'].is-inViewport {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0em);
+}
+
+[data-inViewport='slideLeft'] {
+    transition: 1.5s cubic-bezier(0.4, 1, 0.22, 1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-4em);
+    transition-delay: 0.2s;
+}
+
+[data-inViewport='slideLeft'].is-inViewport {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0em);
+}
+
+[data-inViewport='slideRight'] {
+    transition: 1.5s cubic-bezier(0.4, 1, 0.22, 1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(4em);
+    transition-delay: 0.2s;
+}
+
+[data-inViewport='slideRight'].is-inViewport {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0em);
+}
+
+/* Animation Section */
